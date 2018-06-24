@@ -22,10 +22,10 @@ app.set("view engine", "handlebars");
 
 //Import routes 
 var routes = require("./controllers/burger_controllers.js");
-app.use(routes);
+app.use("/", routes);
 
 // Requiring models for syncing
-// var db = require("./models");
+//var db = require("./models");
 
 
 // Start our server so that it can begin listening to client requests.
