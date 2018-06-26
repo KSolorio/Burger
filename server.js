@@ -1,19 +1,22 @@
 // ** DEPENDENCIES ** //
 var express = require("express"); 
 var bodyParser = require("body-parser");
+var methodOverride = require("method-override");
 
 // Set up Express app
 var app = express();
 var PORT = process.env.PORT || 8080;
 
 // Static directory
-app.use(express.static("public"));
+app.use(express.static(process.cwd() + "/public"));
 
 // Parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 // Parse application/json
 app.use(bodyParser.json());
 
+// Override with POST having ?_method=UPDATE
+app.use(methodOverride("_method"));
 
 // Set up Handlebars
 var exphbs = require("express-handlebars");

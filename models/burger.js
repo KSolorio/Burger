@@ -8,7 +8,7 @@ var burger = {
   },
 
   insertOne: function(cols, vals, cb) {
-    orm.insertOne("burgers", objColVals, condition, function(res){
+    orm.insertOne("burgers", cols, vals, function(res){
       cb(res);
     });
   },
@@ -17,7 +17,13 @@ var burger = {
     orm.updateOne("burgers", objColVals, condition, function(res) {
       cb(res);
     });
-  }
+  },
+  
+  // delete: function(condition, cb) {
+  //   orm.delete("burgers", condition, function(res) {
+  //     cb(res);
+  //   })
+  // }
 
 };
 

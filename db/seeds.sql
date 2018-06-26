@@ -5,4 +5,3 @@ INSERT INTO burgers (burger_name, devoured)
 INSERT INTO burgers (burger_name, devoured)
   VALUES("Western Burger", FALSE);
 
-SELECT * FROM burgers;
